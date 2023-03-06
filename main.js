@@ -119,4 +119,4 @@ function showView(e){
     document.querySelector(id).style.display = "block";
     navBar.classList.remove('active');
     hamburgerMenu.classList.remove('active');
-}
+} 

@@ -5,6 +5,12 @@ let intro = document.querySelector(".intro");
 let logo = document.querySelector(".logo-header");
 let logoSpan = document.querySelectorAll(".logo");
 let logoSpan2 = document.querySelectorAll(".logo2");
+let hamburgerMenu = document.querySelector(".hamburger");
+let navBar = document.querySelector(".main-navbar");
+let views = document.querySelectorAll(".view");
+let allLinks = document.querySelectorAll(".link-btn");
+let projectsPage = document.querySelector("#projects");
+let homePage = document.querySelectorAll("#home");
 
 
 for(i=0; i<thumbnail.length; i++){
@@ -85,4 +91,32 @@ window.addEventListener('DOMContentLoaded', ()=>{
     }, 6500);
     })
     
-})
+});
+
+
+hamburgerMenu.addEventListener('click', function(){
+    navBar.classList.toggle('active');
+    hamburgerMenu.classList.toggle('active');
+    
+});
+
+
+for(let i = 0; i < allLinks.length; i++){
+    allLinks[i].addEventListener('click',showView);
+}
+
+//for(let i = 0; i < allLinks.length; i++){
+//    allLinks[i].addEventListener('click',function(){
+//        navBar.classList.remove('active');
+//});
+
+function showView(e){
+    e.preventDefault();
+    for(let i=0; i < views.length; i++){
+        views[i].style.display = "none";
+    }
+    let id = `#${this.getAttribute("href")}`;
+    document.querySelector(id).style.display = "block";
+    navBar.classList.remove('active');
+    hamburgerMenu.classList.remove('active');
+}

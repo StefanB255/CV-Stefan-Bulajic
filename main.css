@@ -7,6 +7,9 @@ body{
     font-family: 'IBM Plex Sans KR', sans-serif;
     
 }
+header h6{
+    margin-bottom: 0;
+}
 .intro{
     background-image: url(imgs/Studio_Project.png), linear-gradient( rgb(0, 59, 255), rgb(255, 255, 255) );
     background-position: right;
@@ -23,7 +26,7 @@ body{
     left: 0;
     cursor: default;
     text-align: center;
-    display: none;
+/*    display: none;*/
     
 }
 .logo-header{
@@ -40,11 +43,11 @@ body{
     bottom: -20px;
     opacity: 0;
     font-weight: 900;
-    display: none;
+/*    display: block;*/
 }
 .logo.active{
     bottom: 0;
-    display: none;
+/*    display: none;*/
     opacity: 1;
     transition: ease-in-out 0.5s; 
 }
@@ -79,10 +82,117 @@ header{
     grid-template-columns: 1fr 1fr 0fr;
     border-bottom: 1px solid rgba(0, 0, 0, 0.19);
     align-content: center;
+    position: relative;
 }
-li.nav-link{
+/*li.nav-link*/
+/*
+.hamburger ul{
     color: #000;
     display: none;
+    z-index: 100;
+}
+*/
+.hamburger{
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+.hamburger .line{
+    transition: 0.5s ease;
+}
+.hamburger.active{
+    position: relative;
+    align-items: center;
+    transition: 0.5s ease;
+}
+ .hamburger.active .line:nth-child(3){
+     position: absolute;
+    transform: rotate(45deg);
+}
+ .hamburger.active .line:nth-child(1){
+    display: none;
+     opacity: 0;
+}
+ .hamburger.active .line:nth-child(2){
+    transform: rotate(-45deg); 
+}
+/*
+.hamburger{
+    display: grid;
+    position: fixed;
+    z-index: 100;
+    width: 300px;
+    background-color: white;
+    height: 80%;
+    left: 0;
+    bottom: 0;
+    font-weight: 600;
+}
+*/
+.main-header .navbar{
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    
+}
+.main-header .navbar.active{
+   height: 25%;
+    padding: 0.5rem;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    text-align: center;
+    z-index: 11;
+    display: grid;
+    align-content: normal;
+    justify-content: center; 
+    
+/*
+    height: 100%;
+    padding: 0.5rem;
+    width: 300px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    text-align: center;
+    margin: default;
+    z-index: 100000000000000000000000;
+    display: grid;
+    align-content: normal;
+    justify-content: center;
+*/
+}
+main .navbar .nav{
+/*
+    display: grid;
+    height: 100%;
+    text-align: center;
+*/
+    display: grid;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.main-header .navbar .nav a{
+    color: #000;
+    cursor: pointer;
+}
+.main-header .navbar .nav a{
+    color: #000;
+    cursor: pointer;
+    font-weight: 600;
+}
+.main-header .navbar .nav a:hover{
+    color: #256ef8;
+}
+.main-header .navbar.active body{
+    overflow: hidden;
+}
+.main-header{
+    position: inherit;
+}
+main{
+    position: relative;
 }
 .title, .search{
     padding: 1rem 1.5rem;
@@ -97,6 +207,7 @@ li.nav-link{
     display: grid;
     margin: 1rem 1.5rem;
 }
+
 .hamburger .line{
     width: 100%;
     height: 2px;
@@ -112,9 +223,6 @@ width: 100%;
     height: 240px;
     overflow: hidden;
     position: relative;
-}
-.projects{
-    display: flex;
 }
 .project-tumbnail{
     position: relative;
@@ -191,6 +299,7 @@ width: 100%;
 }
 .popup.active{
     display: block;
+    z-index: 101;
 }
 .popup-content{
     z-index: 11;
@@ -232,4 +341,191 @@ footer h6{
 footer h6{
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+.projects-container{
+    
+    overflow: hidden;
+    height: 100vh; 
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+.project-boxx{
+    display: flex;
+    width: 100%;
+    height: 100vh; 
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    scroll-snap-align: start;
+    background-repeat: no-repeat;
+     
+}
+.one{
+   background: url(imgs/jdm-project.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.two{
+   background: url(imgs/IMPOSSIBLE-BUREAU.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.three{
+   background: url(imgs/deskpass-project.avif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.four{
+    background: url(imgs/barber-project.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+}
+.five{
+    background: url(imgs/jovanastill-project.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.six{
+    background: url(imgs/ETQ-Project.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.seven{
+    background: url(imgs/Forma%20Ideale%20Project.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.project-title{
+    width: 50%;
+    text-align: center;
+    align-content: center;
+    height: 100%;
+    display: grid;
+    
+}
+.project-title h1{
+    font-weight: 900;
+    font-size: 55px;
+}
+.project-title span{
+    font-weight: 400;
+    font-size: 20px
+}
+.project-desc{
+    background-color: rgba(29, 20, 20, 0.53);
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.projects-link{
+    width: 50%;
+    align-self: center;
+    
+}
+.project-link img{
+    width: 100%;
+}
+.project-link{
+    width: 450px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+.project-link img{
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0px 0px 14px 11px rgb(255 255 255 / 20%);
+    transition: 0.2s ease;
+}
+.project-link img:hover{
+   box-shadow: 0px 0px 14px 11px rgb(255 255 255 / 42%);
+}
+#projects{
+    display: none;
+}
+#projects header{
+    border-bottom: none;
+}
+@media screen and (max-width: 1600px){
+    .popup-content {
+    z-index: 11;
+    width: 60%;
+    top: 50%;
+    height: fit-content;
+    align-content: center;
+    position: absolute;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.41);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+}
+    
+}
+@media screen and (max-width: 1150px){
+.projects{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+}
+@media screen and (max-width:970px){
+    .project-desc {
+    display: grid;
+    justify-items: center;
+}
+}
+@media screen and (max-width: 880px){
+    .projects-link {
+    width: 80%;
+    align-self: center;
+}
+    .project-boxx{
+        background-position: center;
+    }
+    .project-link{
+        width: 100%;
+    }
+    .project-desc {
+    display: grid;
+    justify-items: center;
+    grid-gap: 50px;
+    align-content: center;
+}
+    .project-title h1 {
+    font-size: 35px;
+}
+}
+@media screen and (max-width: 770px){
+.project-box {
+    width: 90%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    margin: 20px auto;
+}
+    .popup-content{
+        width: 90%;
+    }
+    .projects{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+}
+
+@media screen and (max-width: 550px){
+    .project-box {
+    height: 200px;
+}
+    .search{
+        display: none;
+    }
+    .logo-header {
+    width: 100%;
+}
+    .logo-header span{
+    width: 100%;
+}
 }
